@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="SVIB" />
+        <meta name="author" content="anonymous" />
+
+        <title>SVIB</title>
+        <!-- Bootstrap core CSS -->
+        <!--link href="bootstrap.min.css" rel="stylesheet"-->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+
+        <!-- Custom styles for this template -->
+        <link href="offcanvas.css" rel="stylesheet" />
+        <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+        <style type="text/css">
+            .container {
+                zoom: 1;
+                margin-left: auto;
+                margin-right: auto;
+                vertical-align: middle;
+                width: 100%;
+                max-width: 1000px;
+                font-size: 18px;
+            }
+            .container_img {
+                zoom: 1;
+                margin-left: auto;
+                margin-right: auto;
+                vertical-align: middle;
+                width: 100%;
+                max-width: 1200px;
+            }
+        </style>
+
+        <!-- MathJax -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+        </script>
+
+        <script
+            type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        ></script>
+    </head>
+
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container" align="center">
+                <h2>
+                    SVIB: Systematic Visual Imagination Benchmark
+                </h2>
+         	<h5>
+                    <a href=" ">[Paper]</a>&nbsp;
+                    <a href=" ">[Code]</a>
+                </h5>
+            </div>
+        </div>
+
+        <!--------------------- Teaser --------------------->
+      	<div class="container">
+            <p align="center">
+                <img
+                    border="0"
+                    src="???"
+                    style="width: 30%"
+                />
+                &nbsp;
+                <img
+                    border="0"
+                    src="???"
+                    style="width: 30%"
+                />
+                &nbsp;
+                <img
+                    border="0"
+                    src="???"
+                    style="width: 30%"
+                />
+            </p>
+        </div>
+        <!--------------------- Abstract --------------------->
+        <br />
+        <div class="container">
+            <div align="center"><h2>Abstract</h2></div>
+            <hr />
+            <p>
+		One of the most significant challenges in neural networks is to achieve systematic compositionality. While achieving this in the image domain is crucial, existing systematic generalization benchmarks, such as SCAN, primarily focus on the language domain, leveraging the compositional structure inherent in language. Although there are multiple relevant benchmarks established for images, none specifically address the problem of systematic compositionality in a manner similar to how SCAN serves the language domain. This is because these benchmarks are designed to either (1) leverage language alongside the image, (2) solve an indirect problem of representation disentanglement, or (3) tackle visual reasoning problems. This paper presents the "Systematic Visual Imagination Benchmark (SVIB)" to bridge this gap. SVIB frames this problem as an image-to-image generation problem so that a model should learn the systematicity in both the perception and the imaginative transition process simultaneously. SVIB provides dynamic object-centric scenes, with each object composed of visual factors such as color, shape, and size. It also provides various schemes to investigate the level of difficulties in visual complexity, composition exposure, and transition complexity. Lastly, we present evaluation results on an extensive set of baseline models. We hope that this benchmark will help advance visual systematic compositionality.
+            </p>
+        </div>
+
+        <!--------------------- Method --------------------->
+        <!--------------------- Downloads --------------------->
+
+    	<div class="container">
+            <div align="center"><h2>Downloads</h2></div>
+	    <hr/>
+	    <ul>
+	        <li><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a> </li>
+	    </ul>
+
+            <!--------------------- dSprites --------------------->
+            <div><h3>Simple - dSprites</h3></div>
+	    <ul>
+	        <li><a href="">Single Atomic (5.1 GB)</a> </li>
+	        <li><a href="">Multiple Atomic (5.1 GB)</a> </li>
+	        <li><a href="">Single Non-Atomic (5.1 GB)</a> </li>
+	        <li><a href="">Multiple Non-Atomic (5.1 GB)</a> </li>
+	    </ul>
+            <!--------------------- CLEVR --------------------->
+            <div><h3>Moderate - CLEVR</h3></div>
+	    <ul>
+	        <li><a href="">Single Atomic (18 GB)</a> </li>
+	        <li><a href="">Multiple Atomic (18 GB)</a> </li>
+	        <li><a href="">Single Non-Atomic (18 GB)</a> </li>
+	        <li><a href="">Multiple Non-Atomic (18 GB)</a> </li>
+	    </ul>
+            <!--------------------- CLEVRTex --------------------->
+            <div><h3>Complex - CLEVRTex</h3></div>
+	    <ul>
+	        <li><a href="">Single Atomic (23 GB)</a> </li>
+	        <li><a href="">Multiple Atomic (23 GB)</a> </li>
+	        <li><a href="">Single Non-Atomic (23 GB)</a> </li>
+	        <li><a href="">Multiple Non-Atomic (23 GB)</a> </li>
+	    </ul>
+	</div>
+
+
+        <!--------------------- References --------------------->
+        <br /><br />
+        <div class="container">
+            <div align="center"><h2>References</h2></div>
+            <hr />
+            <p>
+            </p>
+        </div>
+
+        <br /><br /><br />
+    </body>
+</html>
+
