@@ -38,6 +38,15 @@
                 width: 100%;
                 max-width: 1200px;
             }
+	    .dul {
+		list-style: none;
+		margin-bottom: 3em;
+	    }
+		 
+	    .dli {
+		float:left;
+		margin: 0 1em 0 0em;
+	    }
         </style>
 
         <!-- MathJax -->
@@ -74,20 +83,135 @@
             <p align="center">
                 <img
                     border="0"
-                    src="???"
-                    style="width: 30%"
+                    src="qualitative/dsprites-saas-source.png"
+                    style="width: 7%"
                 />
-                &nbsp;
                 <img
                     border="0"
-                    src="???"
-                    style="width: 30%"
+                    src="qualitative/dsprites-saas-target.png"
+                    style="width: 7%"
                 />
-                &nbsp;
+		&nbsp;
                 <img
                     border="0"
-                    src="???"
-                    style="width: 30%"
+                    src="qualitative/clevr-saas-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevr-saas-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-saas-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-saas-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/dsprites-nsaas-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/dsprites-nsaas-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevr-nsaas-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevr-nsaas-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-nsaas-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-nsaas-target.png"
+                    style="width: 7%"
+                />
+		</p>
+		<p align="center">
+                <img
+                    border="0"
+                    src="qualitative/dsprites-mmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/dsprites-mmix2-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevr-mmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevr-mmix2-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-mmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-mmix2-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/dsprites-mnmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/dsprites-mnmix2-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevr-mnmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevr-mnmix2-target.png"
+                    style="width: 7%"
+                />
+		&nbsp;
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-mnmix2-source.png"
+                    style="width: 7%"
+                />
+                <img
+                    border="0"
+                    src="qualitative/clevrtex-mnmix2-target.png"
+                    style="width: 7%"
                 />
             </p>
         </div>
@@ -101,43 +225,105 @@
             </p>
         </div>
 
-        <!--------------------- Method --------------------->
         <!--------------------- Downloads --------------------->
 
-    	<div class="container">
+    	<div class="container", style='background-color: #E3F4F4; padding-top: 1em ; padding-bottom: 1em; margin-top: 1em; margin-bottom: 1em;'>
             <div align="center"><h2>Downloads</h2></div>
 	    <hr/>
-	    <ul>
-	        <li><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a> </li>
+	    <p>
+		Here, we provide three datasets based on visual complexity, each with four different types of tasks. The training and test sets are systematically separated perfectly, and the objects appearing in the test set do not appear anywhere in the training set. Also, we provide four different levels (alpha) of training sets depending on how much various kinds of primitive combinations are covered by the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also to (2) achieve this with a low alpha value training set.
+	    </p>
+	    <ul class="dul">
+	        <li class="dli"><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a> </li>
 	    </ul>
 
             <!--------------------- dSprites --------------------->
-            <div><h3>Simple - dSprites</h3></div>
-	    <ul>
-	        <li><a href="">Single Atomic (5.1 GB)</a> </li>
-	        <li><a href="">Multiple Atomic (5.1 GB)</a> </li>
-	        <li><a href="">Single Non-Atomic (5.1 GB)</a> </li>
-	        <li><a href="">Multiple Non-Atomic (5.1 GB)</a> </li>
+            <div align="center"><h3>Simple - dSprites</h3></div>
+	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+		<h5>Object Property</h5>
+		<ul>
+	 	    <li>4 Shapes</li>
+	            <li>4 Colors</li>
+	            <li>4 Sizes</li>
+		</ul>
+	    </div>
+	    <ul class="dul">
+	        <li class="dli"><a href="">Single Atomic (5.1 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Atomic (5.1 GB)</a> </li>
+	        <li class="dli"><a href="">Single Non-Atomic (5.1 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Non-Atomic (5.1 GB)</a> </li>
 	    </ul>
             <!--------------------- CLEVR --------------------->
-            <div><h3>Moderate - CLEVR</h3></div>
-	    <ul>
-	        <li><a href="">Single Atomic (18 GB)</a> </li>
-	        <li><a href="">Multiple Atomic (18 GB)</a> </li>
-	        <li><a href="">Single Non-Atomic (18 GB)</a> </li>
-	        <li><a href="">Multiple Non-Atomic (18 GB)</a> </li>
+            <div align="center"><h3>Moderate - CLEVR</h3></div>
+	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+		<h5>Object Property</h5>
+		<ul>
+	 	    <li>4 Shapes</li>
+	            <li>6 Colors</li>
+	            <li>3 Sizes</li>
+		    <li>2 Materials</li>
+		</ul>
+	    </div>
+	    <ul class="dul">
+	        <li class="dli"><a href="">Single Atomic (18 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Atomic (18 GB)</a> </li>
+	        <li class="dli"><a href="">Single Non-Atomic (18 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Non-Atomic (18 GB)</a> </li>
 	    </ul>
             <!--------------------- CLEVRTex --------------------->
-            <div><h3>Complex - CLEVRTex</h3></div>
-	    <ul>
-	        <li><a href="">Single Atomic (23 GB)</a> </li>
-	        <li><a href="">Multiple Atomic (23 GB)</a> </li>
-	        <li><a href="">Single Non-Atomic (23 GB)</a> </li>
-	        <li><a href="">Multiple Non-Atomic (23 GB)</a> </li>
+            <div align="center"><h3>Complex - CLEVRTex</h3></div>
+	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
+		<h5>Object Property</h5>
+		<ul>
+	 	    <li>8 Shapes</li>
+	            <li>3 Sizes</li>
+	            <li>8 Materials</li>
+		</ul>
+	    </div>
+	    <ul class="dul">
+	        <li class="dli"><a href="">Single Atomic (23 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Atomic (23 GB)</a> </li>
+	        <li class="dli"><a href="">Single Non-Atomic (23 GB)</a> </li>
+	        <li class="dli"><a href="">Multiple Non-Atomic (23 GB)</a> </li>
 	    </ul>
+
+	    <!--
+	    <div align="center" style="float: left; width: 50%;">
+                <img
+                    border="0"
+                    src="qualitative/directory-tree.png"
+                    style="width: 50%"
+                />
+	    </div>
+	    -->
+
 	</div>
 
 
+        <!--------------------- Details --------------------->
+
+	<div class="container">
+    	    <div align="center"><h2>Details</h2></div>
+    	    <hr/>
+	    <div style="padding: 2em 0 2em 0;">
+	    <p align="center">
+                <img
+                    border="0"
+                    src="qualitative/figure-two-001.png"
+                    style="width: 100%"
+                />	
+	    </p>
+	    <p> Our benchmark provides episodes consisting of two frames, referred to as the input image and the target image. These observations are procedurally generated from an underlying scene state composed of two objects, each constructed as a combination of several higher-level factors such as color, shape, size, material, etc. In this figure, we demonstrate a rule called Shape-Swap that involves swapping the shapes of the two objects in the input scene to generate the target scene. Based on the Shape-Swap rule, we illustrate three tasks with different levels of visual complexity.
+	    </p>
+	    </div>
+	    <p align="center">
+                <img
+                    border="0"
+                    src="qualitative/alpha.png"
+                    style="width: 100%"
+                />	
+	    </p>
+	</div>
         <!--------------------- References --------------------->
         <br /><br />
         <div class="container">
