@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="SVIB" />
-        <meta name="author" content="anonymous" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Yeongbin Kim, Gautam Singh, Junyeong Park, Caglar Gulcehre, Sungjin Ann" />
 
         <title>SVIB</title>
         <!-- Bootstrap core CSS -->
@@ -38,14 +39,44 @@
                 width: 100%;
                 max-width: 1200px;
             }
+
+         .paper-title {
+             margin-top: 2em;
+             margin-bottom: 2em;
+         }
+         .authors-list {
+             margin-bottom: 2em;
+
+         }
+
+	    .pul {
+		list-style: none;
+	     display: flex;
+		margin-bottom: 3em;
+		padding-left: 0em;
+	    }
+
 	    .dul {
 		list-style: none;
-		margin-bottom: 3em;
+	     display: flex;
+		justify-content: center;
+		margin-bottom: 1em;
+		padding-left: 0em;
 	    }
 		 
 	    .dli {
 		float:left;
-		margin: 0 1em 0 0em;
+		margin: 0 1em 0 1em;
+	    }
+
+	    .sul {
+		list-style: none;
+		margin-bottom: 0em;
+		padding-left: 1em;
+	    }
+
+	    .sli {
+		font-size:80%;
 	    }
         </style>
 
@@ -68,13 +99,33 @@
     <body>
         <div class="jumbotron jumbotron-fluid" style='background-color: #E3F4F4;'>
             <div class="container" align="center">
-                <h2>
+                <div class="paper-title">
+                <h1>
                     SVIB: Systematic Visual Imagination Benchmark
-                </h2>
+                </h1>
+                </div>
          	<h5>
-                    <a href=" ">[Paper]</a>&nbsp;
-                    <a href="https://github.com/systematic-visual-imagination/benchmark/tree/master/code">[Code]</a>&nbsp;
-                    <a href="https://github.com/systematic-visual-imagination/benchmark">[Data Preview]</a>
+      <!-- Authors -->
+      <div class="authors-list">
+        <p class="name text-center">
+          <a target="_blank">Yeongbin Kim</a><sup>1,</sup>*,
+          <a target="_blank">Gautam Singh</a><sup>2,</sup>*,
+          <a target="_blank">Junyeong Park</a><sup>1</sup>,
+          <a target="_blank">Caglar Gulcehre</a><sup>3,4</sup>,
+          <a target="_blank">Sungjin Ann</a><sup>1</sup><br>
+        </p>
+        <p class="text-center">
+          <sup>1</sup>KAIST, 
+          <sup>2</sup>Rutgers University,
+          <sup>3</sup>EPFL,
+          <sup>4</sup>Google DeepMind
+        </p>
+          
+        <p class="text-center text-secondary">*equal contribution</p>
+      </div>
+
+                    <a class="btn btn-primary" href=" ">Paper</a>&nbsp;
+                    <a class="btn btn-primary" href=" ">Code (Coming Soon)</a>&nbsp;
                 </h5>
             </div>
         </div>
@@ -227,39 +278,43 @@
             </p>
         </div>
 
+
         <!--------------------- Downloads --------------------->
 
     	<div class="container", style='background-color: #E3F4F4; padding-top: 1em ; padding-bottom: 1em; margin-top: 1em; margin-bottom: 1em;'>
             <div align="center"><h2>Downloads</h2></div>
 	    <hr/>
 	    <p>
-		Here, we provide three datasets based on visual complexity, each with four different types of tasks. The training and test sets are systematically separated perfectly, and the objects appearing in the test set do not appear anywhere in the training set. Also, we provide four different levels (alpha) of training sets depending on how much various kinds of primitive combinations are covered by the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also to (2) achieve this with a low alpha value training set.
+		Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
 	    </p>
-	    <ul class="dul">
+	    <ul class="pul">
             <li class="dli"><b><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a></b> </li>
 	    </ul>
 
+	    <div style="display: flex; flex-direction: row; justify-content: space-around;">
             <!--------------------- dSprites --------------------->
-            <div align="center"><h3>Simple - dSprites</h3></div>
-	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
-		<h5>Object Property</h5>
-		<ul>
+	    <div style="flex-grow: 1;">
+            <div align="center"><h3>dSprites</h3></div>
+	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
+		<div align="center"><h5>Object Property</h5></div>
+		<ul style="width: 150px; margin: 0 auto;">
 	 	    <li>4 Shapes</li>
 	            <li>4 Colors</li>
 	            <li>4 Sizes</li>
 		</ul>
 	    </div>
 	    <ul class="dul">
-	        <li class="dli"><a href="">Single Atomic (5.1 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Atomic (5.1 GB)</a> </li>
-	        <li class="dli"><a href="">Single Non-Atomic (5.1 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Non-Atomic (5.1 GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1CfrgSZRQ-RDsHhK0OnmR6jz0_dqdKUEy"><b>Easy</b></br>(2GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1OD9Qm8feRE2iVHYfbDrYdNk26Tuv7fHP"><b>Medium</b></br>(2GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1cANAcSP3_fhsy04lv2K17907HaFQGG6P"><b>Hard</b></br>(2GB)</a> </li>
 	    </ul>
+	    </div>
             <!--------------------- CLEVR --------------------->
-            <div align="center"><h3>Moderate - CLEVR</h3></div>
-	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
-		<h5>Object Property</h5>
-		<ul>
+	    <div style="flex-grow: 1; border-left: 1px solid gray;">
+            <div align="center"><h3>CLEVR</h3></div>
+	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
+		<div align="center"><h5>Object Property</h5></div>
+		<ul style="width: 150px; margin: 0 auto;">
 	 	    <li>4 Shapes</li>
 	            <li>6 Colors</li>
 	            <li>3 Sizes</li>
@@ -267,28 +322,29 @@
 		</ul>
 	    </div>
 	    <ul class="dul">
-	        <li class="dli"><a href="">Single Atomic (18 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Atomic (18 GB)</a> </li>
-	        <li class="dli"><a href="">Single Non-Atomic (18 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Non-Atomic (18 GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1EtjseIx0HARiS2uRpJ6mz23U2dx2DYgH/view?usp=sharing"><b>Easy</b></br>(13GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1aWGGmflctTTzAXerTvy4yfPPSM6vbIAD/view?usp=sharing"><b>Medium</b></br>(13GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1NkbROrTu38_Wydp_3z7v_1AtSkgXEF0s/view?usp=sharing"><b>Hard</b></br>(13GB)</a> </li>
 	    </ul>
+	    </div>
             <!--------------------- CLEVRTex --------------------->
-            <div align="center"><h3>Complex - CLEVRTex</h3></div>
-	    <div style="padding-left: 4em; padding-right: 4em; padding-top: 1em; padding-bottom: 1em;">
-		<h5>Object Property</h5>
-		<ul>
+	    <div style="flex-grow: 1; border-left: 1px solid gray;">
+            <div align="center"><h3>CLEVRTex</h3></div>
+	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
+		<div align="center"><h5>Object Property</h5></div>
+		<ul style="width: 150px; margin: 0 auto;">
 	 	    <li>8 Shapes</li>
 	            <li>3 Sizes</li>
 	            <li>8 Materials</li>
 		</ul>
 	    </div>
 	    <ul class="dul">
-	        <li class="dli"><a href="">Single Atomic (23 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Atomic (23 GB)</a> </li>
-	        <li class="dli"><a href="">Single Non-Atomic (23 GB)</a> </li>
-	        <li class="dli"><a href="">Multiple Non-Atomic (23 GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1Zgg7qpMQVDjyiQu1rWtNGqAq1pKj1tMf"><b>Easy</b></br>(20GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1DaLUMuYbi6JjSiyEneZ5rPV1YHUnUBfy"><b>Medium</b></br>(20GB)</a> </li>
+	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1YgJwN6Efl7kXlXRRKiX8g9BxIKBye1zx"><b>Hard</b></br>(20GB)</a> </li>
 	    </ul>
-
+	    </div>
+	    </div>
 	    <!--
 	    <div align="center" style="float: left; width: 50%;">
                 <img
@@ -298,7 +354,34 @@
                 />
 	    </div>
 	    -->
-
+            <!--------------------- Full Dataset --------------------->
+            <div align="center" style="margin: 4em 0 1em 0;"><h4></h4></div>
+	    <p style="margin: 0 1.2em 0 1.2em;">
+		<b> Full Dataset</b> &nbsp; Here, we provide all the datasets used in our paper, including an additional dataset that covers all primitive combinations (i.e., Full Combination). We hope that these resources will be useful for a wide range of research purposes.
+	    </p>
+		<div style="display: flex; flex-direction: row; justify-content: space-around; margin: 2em 0 1em 0;">
+	    <ul class="sul">
+	        <li class="sli"><a href="">SVIB-dSprites: Single Atomic (5.1 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-dSprites: Multiple Atomic (5.1 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-dSprites: Single Non-Atomic (5.1 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-dSprites: Multiple Non-Atomic (5.1 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-dSprites: Omni-Composition (219 MB)</a> </li>
+	    </ul>
+	    <ul class="sul">
+	        <li class="sli"><a href="">SVIB-CLEVR: Single Atomic (18 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVR: Multiple Atomic (18 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVR: Single Non-Atomic (18 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVR: Multiple Non-Atomic (18 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVR: Omni-Composition (2.4 GB)</a> </li>
+	    </ul>
+	    <ul class="sul">
+	        <li class="sli"><a href="">SVIB-CLEVRTex: Single Atomic (23 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVRTex: Multiple Atomic (23 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVRTex: Single Non-Atomic (23 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVRTex: Multiple Non-Atomic (23 GB)</a> </li>
+	        <li class="sli"><a href="">SVIB-CLEVRTex: Omni-Composition (3.5 GB)</a> </li>
+	    </ul>
+		</div>
 	</div>
 
 
