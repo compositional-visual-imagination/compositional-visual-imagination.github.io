@@ -1,418 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="SVIB" />
-        <meta name="keywords" content="" />
-        <meta name="author" content="Yeongbin Kim, Gautam Singh, Junyeong Park, Caglar Gulcehre, Sungjin Ann" />
 
-        <title>SVIB</title>
-        <!-- Bootstrap core CSS -->
-        <!--link href="bootstrap.min.css" rel="stylesheet"-->
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-        />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CVIB" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Yeongbin Kim, Gautam Singh, Junyeong Park, Caglar Gulcehre, Sungjin Ahn" />
+    <title>CVIB</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!-- Custom styles for this template -->
+    <!-- <link href="offcanvas.css" rel="stylesheet" />
+        -->
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+    <style type="text/css">
+        .container {
+            zoom: 1;
+            padding-bottom: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            vertical-align: middle;
+            width: 100%;
+            max-width: 1000px;
+            font-size: 18px;
+        }
 
-        <!-- Custom styles for this template -->
-        <link href="offcanvas.css" rel="stylesheet" />
-        <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
-        <style type="text/css">
-            .container {
-                zoom: 1;
-                margin-left: auto;
-                margin-right: auto;
-                vertical-align: middle;
-                width: 100%;
-                max-width: 1000px;
-                font-size: 18px;
-            }
-            .container_img {
-                zoom: 1;
-                margin-left: auto;
-                margin-right: auto;
-                vertical-align: middle;
-                width: 100%;
-                max-width: 1200px;
-            }
+        .container_img {
+            zoom: 1;
+            margin-left: auto;
+            margin-right: auto;
+            vertical-align: middle;
+            width: 100%;
+            max-width: 1200px;
+        }
 
-         .paper-title {
-             margin-top: 2em;
-             margin-bottom: 2em;
-         }
-         .authors-list {
-             margin-bottom: 2em;
+        .paper-title {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
 
-         }
+        .authors-list {
+            margin-bottom: 2em;
+        }
 
-	    .pul {
-		list-style: none;
-	     display: flex;
-		margin-bottom: 3em;
-		padding-left: 0em;
-	    }
+        .logo-list {
+            padding-bottom: 1.5em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
 
-	    .dul {
-		list-style: none;
-	     display: flex;
-		justify-content: center;
-		margin-bottom: 1em;
-		padding-left: 0em;
-	    }
-		 
-	    .dli {
-		float:left;
-		margin: 0 1em 0 1em;
-	    }
+        .sample {
+            list-style: none;
+            display: flex;
+            margin-bottom: 3em;
+            padding-left: 0em;
+        }
 
-	    .sul {
-		list-style: none;
-		margin-bottom: 0em;
-		padding-left: 1em;
-	    }
+        .main_dataset {
+            height: 180px;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
 
-	    .sli {
-		font-size:80%;
-	    }
-        </style>
+        .full_dataset {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 2em 0 1em 0;
+        }
 
-        <!-- MathJax -->
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
+        .h-ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+            padding-left: 0em;
+        }
+
+        .h-li {
+            float: left;
+            margin: 0 1em 0 1em;
+        }
+
+        .v-ul {
+            list-style: none;
+            margin-bottom: 0em;
+            padding-left: 1em;
+        }
+
+        .v-li {
+            font-size: 80%;
+        }
+
+        .property {
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        #dataset {
+            background-color: #E3F4F4;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    </style>
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
               tex2jax: {
                 inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                 processEscapes: true
               }
             });
         </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
 
-        <script
-            type="text/javascript"
-            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-        ></script>
-    </head>
-
-    <body>
-        <div class="jumbotron jumbotron-fluid" style='background-color: #E3F4F4;'>
-            <div class="container" align="center">
-                <div class="paper-title">
+<body>
+    <div class="jumbotron jumbotron-fluid" style='background-color: #E3F4F4; padding-bottom: 0;'>
+        <div class="container" align="center" style="padding-bottom: 4rem;">
+            <div class="paper-title">
                 <h1>
-                    SVIB: Systematic Visual Imagination Benchmark
-                </h1>
+                    CVIB: Compositional Visual Imagination Benchmark </h1>
+            </div>
+            <h5>
+                <!-- Authors -->
+                <div class="authors-list">
+                    <p class="name text-center">
+                        <a target="_blank">Yeongbin Kim</a><sup>1,</sup>*, <a target="_blank">Gautam Singh</a><sup>2,</sup>*, <a target="_blank">Junyeong Park</a><sup>1</sup>, <a target="_blank">Caglar Gulcehre</a><sup>3,4</sup>, <a target="_blank">Sungjin Ahn</a><sup>1</sup><br>
+                    </p>
+                    <p class="text-center">
+                        <sup>1</sup>KAIST, <sup>2</sup>Rutgers University, <sup>3</sup>EPFL, <sup>4</sup>Google DeepMind
+                    </p>
+                    <p class="text-center text-secondary">
+                        *Equal Contribution
+                    </p>
                 </div>
-         	<h5>
-      <!-- Authors -->
-      <div class="authors-list">
-        <p class="name text-center">
-          <a target="_blank">Yeongbin Kim</a><sup>1,</sup>*,
-          <a target="_blank">Gautam Singh</a><sup>2,</sup>*,
-          <a target="_blank">Junyeong Park</a><sup>1</sup>,
-          <a target="_blank">Caglar Gulcehre</a><sup>3,4</sup>,
-          <a target="_blank">Sungjin Ann</a><sup>1</sup><br>
+                <a class="btn btn-primary" href=" ">Paper</a>&nbsp; <a class="btn btn-primary" href=" ">Github</a>&nbsp; <a class="btn btn-primary" href="#dataset">Dataset</a>&nbsp;
+            </h5>
+        </div>
+        <div class="container logo-list">
+            <img border="0" src="images/KAIST logo.png" style="height: 40px;" />
+            &nbsp; <img border="0" src="images/Rutgers logo.png" style="height: 40px;" />
+            &nbsp; <img border="0" src="images/EPFL logo.png" style="height: 30px;" />
+            &nbsp; <img border="0" src="images/Google Deepmind logo.png" style="height: 40px;" />
+        </div>
+    </div>
+    <!--------------------- Teaser --------------------->
+    <div class="container" style="padding-bottom: 0;">
+        <p align="center">
+            <img border="0" src="images/dsprites-saas-source.png" style="width: 7%" />
+            <img border="0" src="images/dsprites-saas-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevr-saas-source.png" style="width: 7%" />
+            <img border="0" src="images/clevr-saas-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevrtex-saas-source.png" style="width: 7%" />
+            <img border="0" src="images/clevrtex-saas-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/dsprites-nsaas-source.png" style="width: 7%" />
+            <img border="0" src="images/dsprites-nsaas-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevr-nsaas-source.png" style="width: 7%" />
+            <img border="0" src="images/clevr-nsaas-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevrtex-nsaas-source.png" style="width: 7%" />
+            <img border="0" src="images/clevrtex-nsaas-target.png" style="width: 7%" />
         </p>
-        <p class="text-center">
-          <sup>1</sup>KAIST, 
-          <sup>2</sup>Rutgers University,
-          <sup>3</sup>EPFL,
-          <sup>4</sup>Google DeepMind
+        <p align="center">
+            <img border="0" src="images/dsprites-mmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/dsprites-mmix2-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevr-mmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/clevr-mmix2-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevrtex-mmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/clevrtex-mmix2-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/dsprites-mnmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/dsprites-mnmix2-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevr-mnmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/clevr-mnmix2-target.png" style="width: 7%" />
+            &nbsp; <img border="0" src="images/clevrtex-mnmix2-source.png" style="width: 7%" />
+            <img border="0" src="images/clevrtex-mnmix2-target.png" style="width: 7%" />
         </p>
-          
-        <p class="text-center text-secondary">*equal contribution</p>
-      </div>
-
-                    <a class="btn btn-primary" href=" ">Paper</a>&nbsp;
-                    <a class="btn btn-primary" href=" ">Code (Coming Soon)</a>&nbsp;
-                </h5>
+    </div>
+    <!--------------------- Abstract --------------------->
+    <br />
+    <div class="container">
+        <div align="center">
+            <h2>Abstract</h2>
+        </div>
+        <hr />
+        <p>
+            Systematic compositionality, or the ability to adapt to novel situations by creating a mental model of the world using reusable pieces of knowledge, remains a significant challenge in machine learning. While there has been considerable progress in the language domain, efforts towards systematic visual imagination, or envisioning the dynamical implications of a visual observation, are in their infancy. We introduce the Compositional Visual Imagination Benchmark (CVIB), the first benchmark designed to address this problem head-on. CVIB offers a novel framework for a minimal world modeling problem, where models are evaluated based on their ability to generate one-step image-to-image transformations under a latent world dynamics. The framework provides benefits such as the possibility to jointly optimize for systematic perception and imagination, a range of difficulty levels, and the ability to control the fraction of possible factor combinations used during training. We hope that this benchmark will help advance visual systematic compositionality.
+            <!--One of the most significant challenges in neural networks is to achieve systematic compositionality. While achieving this in the image domain is crucial, existing systematic generalization benchmarks, such as SCAN, primarily focus on the language domain, leveraging the compositional structure inherent in language. Although there are multiple relevant benchmarks established for images, none specifically address the problem of systematic compositionality in a manner similar to how SCAN serves the language domain. This is because these benchmarks are designed to either (1) leverage language alongside the image, (2) solve an indirect problem of representation disentanglement, or (3) tackle visual reasoning problems. This paper presents the "Compositional Visual Imagination Benchmark (CVIB)" to bridge this gap. CVIB frames this problem as an image-to-image generation problem so that a model should learn the systematicity in both the perception and the imaginative transition process simultaneously. CVIB provides dynamic object-centric scenes, with each object composed of visual factors such as color, shape, and size. It also provides various schemes to investigate the level of difficulties in visual complexity, composition exposure, and transition complexity. Lastly, we present evaluation results on an extensive set of baseline models. We hope that this benchmark will help advance visual systematic compositionality.-->
+        </p>
+    </div>
+    <!--------------------- Main Idea --------------------->
+    <div class="container">
+        <div align="center">
+            <h2>Main Idea</h2>
+        </div>
+        <hr />
+        <div style="padding: 2em 0 2em 0;">
+            <p align="center">
+                <img border="0" src="images/figure-two-001.png" style="width: 100%" />
+            </p>
+            <p>
+                Our benchmark provides episodes consisting of two frames, referred to as the input image and the target image. These observations are procedurally generated from an underlying scene state composed of two objects, each constructed as a combination of several higher-level factors such as color, shape, size, material, etc. In this figure, we demonstrate a rule called Shape-Swap that involves swapping the shapes of the two objects in the input scene to generate the target scene. Based on the Shape-Swap rule, we illustrate three tasks with different levels of visual complexity.
+            </p>
+        </div>
+        <p align="center">
+            <img border="0" src="images/alpha.png" style="width: 100%" />
+        </p>
+        <p>
+            The training set includes all the individual primitive elements of shape and color. However, it does not have all possible combinations of these primitive elements, but only contains some of them. We provide serveral training splits by controlling α i.e., the fraction of combinations shown in training. In testing, we present the unseen combinations.
+        </p>
+    </div>
+    <!--------------------- Downloads --------------------->
+    <div class="container" id='dataset'>
+        <div align="center">
+            <h2>Downloads</h2>
+        </div>
+        <hr />
+        <p>
+            Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
+        </p>
+        <ul class="sample">
+            <li class="h-li"><b><a href="https://github.com/systematic-visual-imagination/benchmark">CVIB dataset preview/sample (356 MB)</a></b></li>
+        </ul>
+        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+            <!--------------------- dSprites --------------------->
+            <div style="flex-grow: 1;">
+                <div align="center">
+                    <h3>dSprites</h3>
+                </div>
+                <div class="main_dataset">
+                    <div align="center">
+                        <h5>Object Property</h5>
+                    </div>
+                    <ul class="property">
+                        <li>4 Shapes</li>
+                        <li>4 Colors</li>
+                        <li>4 Sizes</li>
+                    </ul>
+                </div>
+                <ul class="h-ul">
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1CfrgSZRQ-RDsHhK0OnmR6jz0_dqdKUEy"><b>Easy</b></br>(2GB)</a></li>
+                    <li class="h-li" align="center"><a href=""><b>Medium</b></br>(2GB)</a></li>
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1cANAcSP3_fhsy04lv2K17907HaFQGG6P"><b>Hard</b></br>(2GB)</a></li>
+                </ul>
+            </div>
+            <!--------------------- CLEVR --------------------->
+            <div style="flex-grow: 1; border-left: 1px solid gray;">
+                <div align="center">
+                    <h3>CLEVR</h3>
+                </div>
+                <div class="main_dataset">
+                    <div align="center">
+                        <h5>Object Property</h5>
+                    </div>
+                    <ul class="property">
+                        <li>4 Shapes</li>
+                        <li>6 Colors</li>
+                        <li>3 Sizes</li>
+                        <li>2 Materials</li>
+                    </ul>
+                </div>
+                <ul class="h-ul">
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1EtjseIx0HARiS2uRpJ6mz23U2dx2DYgH"><b>Easy</b></br>(13GB)</a></li>
+                    <li class="h-li" align="center"><a href=""><b>Medium</b></br>(13GB)</a></li>
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1NkbROrTu38_Wydp_3z7v_1AtSkgXEF0s"><b>Hard</b></br>(13GB)</a></li>
+                </ul>
+            </div>
+            <!--------------------- CLEVRTex --------------------->
+            <div style="flex-grow: 1; border-left: 1px solid gray;">
+                <div align="center">
+                    <h3>CLEVRTex</h3>
+                </div>
+                <div class="main_dataset">
+                    <div align="center">
+                        <h5>Object Property</h5>
+                    </div>
+                    <ul class="property">
+                        <li>8 Shapes</li>
+                        <li>3 Sizes</li>
+                        <li>8 Materials</li>
+                    </ul>
+                </div>
+                <ul class="h-ul">
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1Zgg7qpMQVDjyiQu1rWtNGqAq1pKj1tMf"><b>Easy</b></br>(20GB)</a></li>
+                    <li class="h-li" align="center"><a href=""><b>Medium</b></br>(20GB)</a></li>
+                    <li class="h-li" align="center"><a href="https://drive.google.com/uc?export=download&id=1YgJwN6Efl7kXlXRRKiX8g9BxIKBye1zx"><b>Hard</b></br>(20GB)</a></li>
+                </ul>
             </div>
         </div>
-
-        <!--------------------- Teaser --------------------->
-      	<div class="container">
-            <p align="center">
-                <img
-                    border="0"
-                    src="images/dsprites-saas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/dsprites-saas-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevr-saas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevr-saas-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevrtex-saas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevrtex-saas-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/dsprites-nsaas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/dsprites-nsaas-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevr-nsaas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevr-nsaas-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevrtex-nsaas-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevrtex-nsaas-target.png"
-                    style="width: 7%"
-                />
-		</p>
-		<p align="center">
-                <img
-                    border="0"
-                    src="images/dsprites-mmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/dsprites-mmix2-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevr-mmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevr-mmix2-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevrtex-mmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevrtex-mmix2-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/dsprites-mnmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/dsprites-mnmix2-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevr-mnmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevr-mnmix2-target.png"
-                    style="width: 7%"
-                />
-		&nbsp;
-                <img
-                    border="0"
-                    src="images/clevrtex-mnmix2-source.png"
-                    style="width: 7%"
-                />
-                <img
-                    border="0"
-                    src="images/clevrtex-mnmix2-target.png"
-                    style="width: 7%"
-                />
-            </p>
+        <!--------------------- Full Dataset --------------------->
+        <div align="center" style="margin: 4em 0 1em 0;">
+            <h4></h4>
         </div>
-        <!--------------------- Abstract --------------------->
-        <br />
-        <div class="container">
-            <div align="center"><h2>Abstract</h2></div>
-            <hr />
-            <p>
-            Systematic compositionality, or the ability to adapt to novel situations by creating a mental model of the world using reusable pieces of knowledge, remains a significant challenge in machine learning. While there has been considerable progress in the language domain, efforts towards systematic visual imagination, or envisioning the dynamical implications of a visual observation, are in their infancy. We introduce the Systematic Visual Imagination Benchmark (SVIB), the first benchmark designed to address this problem head-on. SVIB offers a novel framework for a minimal world modeling problem, where models are evaluated based on their ability to generate one-step image-to-image transformations under a latent world dynamics. The framework provides benefits such as the possibility to jointly optimize for systematic perception and imagination, a range of difficulty levels, and the ability to control the fraction of possible factor combinations used during training. We hope that this benchmark will help advance visual systematic compositionality.
-            <!--One of the most significant challenges in neural networks is to achieve systematic compositionality. While achieving this in the image domain is crucial, existing systematic generalization benchmarks, such as SCAN, primarily focus on the language domain, leveraging the compositional structure inherent in language. Although there are multiple relevant benchmarks established for images, none specifically address the problem of systematic compositionality in a manner similar to how SCAN serves the language domain. This is because these benchmarks are designed to either (1) leverage language alongside the image, (2) solve an indirect problem of representation disentanglement, or (3) tackle visual reasoning problems. This paper presents the "Systematic Visual Imagination Benchmark (SVIB)" to bridge this gap. SVIB frames this problem as an image-to-image generation problem so that a model should learn the systematicity in both the perception and the imaginative transition process simultaneously. SVIB provides dynamic object-centric scenes, with each object composed of visual factors such as color, shape, and size. It also provides various schemes to investigate the level of difficulties in visual complexity, composition exposure, and transition complexity. Lastly, we present evaluation results on an extensive set of baseline models. We hope that this benchmark will help advance visual systematic compositionality.-->
-            </p>
+        <p style="margin: 0 1.2em 0 1.2em;">
+            <b> Full Dataset</b> &nbsp; Here, we provide all the datasets used in our paper, including an additional dataset that covers all primitive combinations (i.e., Full Combination). We hope that these resources will be useful for a wide range of research purposes.
+        </p>
+        <div class="full_dataset">
+            <ul class="v-ul">
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1HK0AaSJWUZK2FRgwobxkSPdTBlCAoYVu">CVIB-dSprites: Single Atomic (5.1 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1nwSmsnjfOXwPaiRzvoffUyc1kObTHPlc">CVIB-dSprites: Multiple Atomic (5.1 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1r9psF5FgXoxS-9vWBGujjiSNSF-tMxie">CVIB-dSprites: Single Non-Atomic (5.1 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1S9_ku62hvzxWOmqmqSO4u0COOsBRYO4k">CVIB-dSprites: Multiple Non-Atomic (5.1 GB)</a></li>
+                <li class="v-li"><a href="">CVIB-dSprites: Omni-Composition (219 MB)</a></li>
+            </ul>
+            <ul class="v-ul">
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1s4BrktVl5VvUGdKf8OX26AKqinm86Rhx">CVIB-CLEVR: Single Atomic (18 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1MKMNKZpq1Q2t1U-VhaF9ys_rNiwMyDCe">CVIB-CLEVR: Multiple Atomic (18 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1sV312glAtCt50BsdnlxZAvRTniFIS9oV">CVIB-CLEVR: Single Non-Atomic (18 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1tPKdCAnnXr3AocMEmkt1tX3yJAQdwriO">CVIB-CLEVR: Multiple Non-Atomic (18 GB)</a></li>
+                <li class="v-li"><a href="">CVIB-CLEVR: Omni-Composition (2.4 GB)</a></li>
+            </ul>
+            <ul class="v-ul">
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=11XlN4aqGakRbncrhfVZ8dzgjlgQDtC0K">CVIB-CLEVRTex: Single Atomic (23 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1jbFyjvzzB_PkICAbtklCCiw7pbdznrAX">CVIB-CLEVRTex: Multiple Atomic (23 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=147ejTy4q2746i6wOehE2IwHOlJaacvs1">CVIB-CLEVRTex: Single Non-Atomic (23 GB)</a></li>
+                <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1WsX58i-s3TI_OxQs0XixhIZomFIQvT3n">CVIB-CLEVRTex: Multiple Non-Atomic (23 GB)</a></li>
+                <li class="v-li"><a href="">CVIB-CLEVRTex: Omni-Composition (3.5 GB)</a></li>
+            </ul>
         </div>
+    </div>
+    <br /><br /><br />
+</body>
 
-
-        <!--------------------- Downloads --------------------->
-
-    	<div class="container", style='background-color: #E3F4F4; padding-top: 1em ; padding-bottom: 1em; margin-top: 1em; margin-bottom: 1em;'>
-            <div align="center"><h2>Downloads</h2></div>
-	    <hr/>
-	    <p>
-		Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
-	    </p>
-	    <ul class="pul">
-            <li class="dli"><b><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a></b> </li>
-	    </ul>
-
-	    <div style="display: flex; flex-direction: row; justify-content: space-around;">
-            <!--------------------- dSprites --------------------->
-	    <div style="flex-grow: 1;">
-            <div align="center"><h3>dSprites</h3></div>
-	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
-		<div align="center"><h5>Object Property</h5></div>
-		<ul style="width: 150px; margin: 0 auto;">
-	 	    <li>4 Shapes</li>
-	            <li>4 Colors</li>
-	            <li>4 Sizes</li>
-		</ul>
-	    </div>
-	    <ul class="dul">
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1CfrgSZRQ-RDsHhK0OnmR6jz0_dqdKUEy"><b>Easy</b></br>(2GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1OD9Qm8feRE2iVHYfbDrYdNk26Tuv7fHP"><b>Medium</b></br>(2GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1cANAcSP3_fhsy04lv2K17907HaFQGG6P"><b>Hard</b></br>(2GB)</a> </li>
-	    </ul>
-	    </div>
-            <!--------------------- CLEVR --------------------->
-	    <div style="flex-grow: 1; border-left: 1px solid gray;">
-            <div align="center"><h3>CLEVR</h3></div>
-	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
-		<div align="center"><h5>Object Property</h5></div>
-		<ul style="width: 150px; margin: 0 auto;">
-	 	    <li>4 Shapes</li>
-	            <li>6 Colors</li>
-	            <li>3 Sizes</li>
-		    <li>2 Materials</li>
-		</ul>
-	    </div>
-	    <ul class="dul">
-	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1EtjseIx0HARiS2uRpJ6mz23U2dx2DYgH/view?usp=sharing"><b>Easy</b></br>(13GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1aWGGmflctTTzAXerTvy4yfPPSM6vbIAD/view?usp=sharing"><b>Medium</b></br>(13GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/file/d/1NkbROrTu38_Wydp_3z7v_1AtSkgXEF0s/view?usp=sharing"><b>Hard</b></br>(13GB)</a> </li>
-	    </ul>
-	    </div>
-            <!--------------------- CLEVRTex --------------------->
-	    <div style="flex-grow: 1; border-left: 1px solid gray;">
-            <div align="center"><h3>CLEVRTex</h3></div>
-	    <div style="height: 180px; padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 1em;">
-		<div align="center"><h5>Object Property</h5></div>
-		<ul style="width: 150px; margin: 0 auto;">
-	 	    <li>8 Shapes</li>
-	            <li>3 Sizes</li>
-	            <li>8 Materials</li>
-		</ul>
-	    </div>
-	    <ul class="dul">
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1Zgg7qpMQVDjyiQu1rWtNGqAq1pKj1tMf"><b>Easy</b></br>(20GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1DaLUMuYbi6JjSiyEneZ5rPV1YHUnUBfy"><b>Medium</b></br>(20GB)</a> </li>
-	        <li class="dli" align="center"><a href="https://drive.google.com/uc?export=download&id=1YgJwN6Efl7kXlXRRKiX8g9BxIKBye1zx"><b>Hard</b></br>(20GB)</a> </li>
-	    </ul>
-	    </div>
-	    </div>
-	    <!--
-	    <div align="center" style="float: left; width: 50%;">
-                <img
-                    border="0"
-                    src="images/directory-tree.png"
-                    style="width: 50%"
-                />
-	    </div>
-	    -->
-            <!--------------------- Full Dataset --------------------->
-            <div align="center" style="margin: 4em 0 1em 0;"><h4></h4></div>
-	    <p style="margin: 0 1.2em 0 1.2em;">
-		<b> Full Dataset</b> &nbsp; Here, we provide all the datasets used in our paper, including an additional dataset that covers all primitive combinations (i.e., Full Combination). We hope that these resources will be useful for a wide range of research purposes.
-	    </p>
-		<div style="display: flex; flex-direction: row; justify-content: space-around; margin: 2em 0 1em 0;">
-	    <ul class="sul">
-	        <li class="sli"><a href="">SVIB-dSprites: Single Atomic (5.1 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-dSprites: Multiple Atomic (5.1 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-dSprites: Single Non-Atomic (5.1 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-dSprites: Multiple Non-Atomic (5.1 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-dSprites: Omni-Composition (219 MB)</a> </li>
-	    </ul>
-	    <ul class="sul">
-	        <li class="sli"><a href="">SVIB-CLEVR: Single Atomic (18 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVR: Multiple Atomic (18 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVR: Single Non-Atomic (18 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVR: Multiple Non-Atomic (18 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVR: Omni-Composition (2.4 GB)</a> </li>
-	    </ul>
-	    <ul class="sul">
-	        <li class="sli"><a href="">SVIB-CLEVRTex: Single Atomic (23 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVRTex: Multiple Atomic (23 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVRTex: Single Non-Atomic (23 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVRTex: Multiple Non-Atomic (23 GB)</a> </li>
-	        <li class="sli"><a href="">SVIB-CLEVRTex: Omni-Composition (3.5 GB)</a> </li>
-	    </ul>
-		</div>
-	</div>
-
-
-        <!--------------------- Details --------------------->
-
-	<div class="container">
-    	    <div align="center"><h2>Details</h2></div>
-    	    <hr/>
-	    <div style="padding: 2em 0 2em 0;">
-	    <p align="center">
-                <img
-                    border="0"
-                    src="images/figure-two-001.png"
-                    style="width: 100%"
-                />	
-	    </p>
-	    <p> Our benchmark provides episodes consisting of two frames, referred to as the input image and the target image. These observations are procedurally generated from an underlying scene state composed of two objects, each constructed as a combination of several higher-level factors such as color, shape, size, material, etc. In this figure, we demonstrate a rule called Shape-Swap that involves swapping the shapes of the two objects in the input scene to generate the target scene. Based on the Shape-Swap rule, we illustrate three tasks with different levels of visual complexity.
-	    </p>
-	    </div>
-	    <p align="center">
-                <img
-                    border="0"
-                    src="images/alpha.png"
-                    style="width: 100%"
-                />	
-	    </p>
-	    <p> The training set includes all the individual primitive elements of shape and color. However, it does not have all possible combinations of these primitive elements, but only contains some of them. We provide serveral training splits by controlling α i.e., the fraction of combinations shown in training. In testing, we present the unseen combinations.
-	    </p>
-	</div>
-
-        <br /><br /><br />
-    </body>
 </html>
-
