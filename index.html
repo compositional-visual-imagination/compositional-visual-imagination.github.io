@@ -225,8 +225,45 @@
         </div>
         <hr />
         <p>
-            Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
+            There are a total of 12 tasks, 4 tasks per environment (CVIB-dSprites, CVIB-CLEVR, and CVIB-CLEVRTex). Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
         </p>
+
+<div style="padding: 2em 0 2em 0;">
+        <ul>
+  <li><strong>Dataset Overview</strong></li>
+  <ul>
+    <li>Total of three <b>environments</b>: <em>CVIB-dSprites</em>, <em>CVIB-CLEVR</em>, <em>CVIB-CLEVRTex</em></li>
+    <li>Each environment has three splits with distinct <b>difficulty</b>: <em>Easy</em> (α=0.6), <em>Medium</em> (α=0.4), <em>Hard</em> (α=0.2)</li>
+  </ul>
+  <br>
+
+  <li><strong>Variety of Tasks</strong></li>
+  <ul>
+    <li>Four <b>types of tasks</b> per environment:</li>
+    <ol type="1">
+      <li><em>Single_Atomic</em></li>
+      <li><em>Multiple_Atomic</em></li>
+      <li><em>Single_Non-Atomic</em></li>
+      <li><em>Multiple_Non-Atomic</em></li>
+    </ol>
+  </ul>
+  <br>
+
+  <li><strong>Data Split Details</strong></li>
+  <ul>
+    <li><b>Training</b> splits:</li>
+    <ul>
+      <li>64,000 input and target images</li>
+    </ul>
+    <li><b>Test</b> splits:</li>
+    <ul>
+      <li>8,000 out-of-distribution input and target images</li>
+    </ul>
+    <li><b>Ground-truth scene descriptions</b> and <b>object masks</b> provided for both input and target images</li>
+  </ul>
+</ul>
+</div>
+
         <ul class="sample">
             <li class="h-li"><b><a href="https://github.com/systematic-visual-imagination/benchmark">CVIB dataset preview/sample (356 MB)</a></b></li>
         </ul>
@@ -301,7 +338,9 @@
             <h4></h4>
         </div>
         <p style="margin: 0 1.2em 0 1.2em;">
-            <b> Full Dataset</b> &nbsp; Here, we provide all the datasets used in our paper, including an additional dataset that covers all primitive combinations (i.e., Full Combination). We hope that these resources will be useful for a wide range of research purposes.
+            <b> Full Datasets</b> &nbsp;
+<!--Here, we provide all the datasets used in the paper, including the data corresponding to <b>&alpha;</b> value of 0.0. Each dataset is further divided into four data splits based on the coverage of primitive combinations. Except for the data corresponding to <b>&alpha;</b>=0.0 and the overall dataset structure, these datasets are inherently same to the main dataset we have been providing above.-->
+Here, we offer access to all the datasets utilized in our paper. This includes data associated with an α (alpha) value of 0.0. Each dataset is divided into four distinct data splits, categorized by the extent of primitive combination coverage. It's important to note that, aside from the data corresponding to α=0.0 and the overarching dataset structure, these datasets are essentially identical to the primary datasets presented above.
         </p>
         <div class="full_dataset">
             <ul class="v-ul">
@@ -309,23 +348,42 @@
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1nwSmsnjfOXwPaiRzvoffUyc1kObTHPlc">CVIB-dSprites: Multiple Atomic (5.1 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1r9psF5FgXoxS-9vWBGujjiSNSF-tMxie">CVIB-dSprites: Single Non-Atomic (5.1 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1S9_ku62hvzxWOmqmqSO4u0COOsBRYO4k">CVIB-dSprites: Multiple Non-Atomic (5.1 GB)</a></li>
-                <li class="v-li"><a href="">CVIB-dSprites: Omni-Composition (219 MB)</a></li>
             </ul>
             <ul class="v-ul">
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1s4BrktVl5VvUGdKf8OX26AKqinm86Rhx">CVIB-CLEVR: Single Atomic (18 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1MKMNKZpq1Q2t1U-VhaF9ys_rNiwMyDCe">CVIB-CLEVR: Multiple Atomic (18 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1sV312glAtCt50BsdnlxZAvRTniFIS9oV">CVIB-CLEVR: Single Non-Atomic (18 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1tPKdCAnnXr3AocMEmkt1tX3yJAQdwriO">CVIB-CLEVR: Multiple Non-Atomic (18 GB)</a></li>
-                <li class="v-li"><a href="">CVIB-CLEVR: Omni-Composition (2.4 GB)</a></li>
             </ul>
             <ul class="v-ul">
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=11XlN4aqGakRbncrhfVZ8dzgjlgQDtC0K">CVIB-CLEVRTex: Single Atomic (23 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1jbFyjvzzB_PkICAbtklCCiw7pbdznrAX">CVIB-CLEVRTex: Multiple Atomic (23 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=147ejTy4q2746i6wOehE2IwHOlJaacvs1">CVIB-CLEVRTex: Single Non-Atomic (23 GB)</a></li>
                 <li class="v-li"><a href="https://drive.google.com/uc?export=download&id=1WsX58i-s3TI_OxQs0XixhIZomFIQvT3n">CVIB-CLEVRTex: Multiple Non-Atomic (23 GB)</a></li>
+            </ul>
+
+        </div>
+
+        <!--------------------- Omni-Set --------------------->
+        <div align="center" style="margin: 4em 0 1em 0;">
+            <h4></h4>
+        </div>
+        <p style="margin: 0 1.2em 0 1.2em;">
+            <b> Omni-Composition Datasets</b> &nbsp; Here, we also provides an omni-composition dataset for each of the 3 subsets: CVIB-dSprites, CVIB-CLEVR, and CVIB-CLEVRTex. An omni-composition dataset is a dataset containing unpaired images that capture all possible combinations of primitives under the visual vocabulary of its corresponding environment.
+        </p>
+        <div class="full_dataset">
+            <ul class="v-ul">
+                <li class="v-li"><a href="">CVIB-dSprites: Omni-Composition (219 MB)</a></li>
+            </ul>
+            <ul class="v-ul">
+                <li class="v-li"><a href="">CVIB-CLEVR: Omni-Composition (2.4 GB)</a></li>
+            </ul>
+            <ul class="v-ul">
                 <li class="v-li"><a href="">CVIB-CLEVRTex: Omni-Composition (3.5 GB)</a></li>
             </ul>
+
         </div>
+
     </div>
     <br /><br /><br />
 </body>
