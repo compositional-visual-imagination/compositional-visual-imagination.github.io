@@ -191,81 +191,136 @@
         <div align="center">
             <h2>Abstract</h2>
         </div>
-        <hr />
-        <p>
-            Systematic compositionality, or the ability to adapt to novel situations by creating a mental model of the world using reusable pieces of knowledge, remains a significant challenge in machine learning. While there has been considerable progress in the language domain, efforts towards systematic visual imagination, or envisioning the dynamical implications of a visual observation, are in their infancy. We introduce the Systematic Visual Imagination Benchmark (SVIB), the first benchmark designed to address this problem head-on. SVIB offers a novel framework for a minimal world modeling problem, where models are evaluated based on their ability to generate one-step image-to-image transformations under a latent world dynamics. The framework provides benefits such as the possibility to jointly optimize for systematic perception and imagination, a range of difficulty levels, and the ability to control the fraction of possible factor combinations used during training. We hope that this benchmark will help advance visual systematic compositionality.
-        </p>
+            <hr />
+            <p align="justify">
+                Systematic compositionality, or the ability to adapt to novel situations by creating a mental model of the world using reusable pieces of knowledge, remains a significant challenge in machine learning. While there has been considerable progress in the language domain, efforts towards systematic visual imagination, or envisioning the dynamical implications of a visual observation, are in their infancy. We introduce the Systematic Visual Imagination Benchmark (SVIB), the first benchmark designed to address this problem head-on. SVIB offers a novel framework for a minimal world modeling problem, where models are evaluated based on their ability to generate one-step image-to-image transformations under a latent world dynamics. The framework provides benefits such as the possibility to jointly optimize for systematic perception and imagination, a range of difficulty levels, and the ability to control the fraction of possible factor combinations used during training. We hope that this benchmark will help advance visual systematic compositionality.
+            </p>
+
     </div>
     <!--------------------- Main Idea --------------------->
     <div class="container">
         <div align="center">
-            <h2>Main Idea</h2>
+            <h2>Compositional Visual World</h2>
+            <hr />
+            <div style="padding: 2em 0 2em 0;">
+                <p align="center">
+                    <img border="0" src="images/figure-two-001.png" style="width: 100%" />
+                </p>
+                <p align="justify">
+                    Our benchmark provides episodes consisting of two frames, referred to as the <b>input image</b> and the <b>target image</b>. These observations are procedurally generated from an underlying compositional scene state composed of two objects, each constructed as a combination of several intra-object factors such as color, shape, size, etc. In this figure, we show a rule called Shape-Swap that involves swapping the shapes of the two objects in the input scene to generate the target scene. Based on the Shape-Swap rule, we show three tasks with different levels of visual complexity.
+                </p>
+            </div>
         </div>
-        <hr />
-        <div style="padding: 2em 0 2em 0;">
-            <p align="center">
-                <img border="0" src="images/figure-two-001.png" style="width: 100%" />
-            </p>
-            <p>
-                Our benchmark provides episodes consisting of two frames, referred to as the input image and the target image. These observations are procedurally generated from an underlying scene state composed of two objects, each constructed as a combination of several higher-level factors such as color, shape, size, material, etc. In this figure, we demonstrate a rule called Shape-Swap that involves swapping the shapes of the two objects in the input scene to generate the target scene. Based on the Shape-Swap rule, we illustrate three tasks with different levels of visual complexity.
-            </p>SVIB
+    </div>
+    <div class="container">
+        <div align="center">
+            <h2>Systematic Training and Testing Splits</h2>
+            <hr />
+            <div style="padding: 2em 0 2em 0;">
+                <p align="center">
+                    <img border="0" src="images/alpha.png" style="width: 100%" />
+                </p>
+                <p align="justify">
+                    The training set includes all the primitives of shape and color individually. However, it does not contain all possible combinations of the primitives, but contains only a subset of them. We provide several training splits by controlling an α parameter i.e., the fraction of all possible primitive combinations that are shown in the training episodes. In testing, we present the held-out combinations.
+                </p>
+            </div>
         </div>
-        <p align="center">
-            <img border="0" src="images/alpha.png" style="width: 100%" />
-        </p>
-        <p>
-            The training set includes all the individual primitive elements of shape and color. However, it does not have all possible combinations of these primitive elements, but only contains some of them. We provide serveral training splits by controlling α i.e., the fraction of combinations shown in training. In testing, we present the unseen combinations.
-        </p>
     </div>
     <!--------------------- Downloads --------------------->
     <div class="container" id='dataset'>
         <div align="center">
-            <h2>Downloads</h2>
+            <h2>Dataset</h2>
         </div>
         <hr />
-        <p>
-            There are a total of 12 tasks, 4 tasks per environment (SVIB-dSprites, SVIB-CLEVR, and SVIB-CLEVRTex). Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.
+<!--        <p align="justify">-->
+<!--            There are a total of 12 tasks, 4 tasks per environment (<b>SVIB-dSprites</b>, <b>SVIB-CLEVR</b>, and <b>SVIB-CLEVRTex</b>). Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.-->
+<!--        </p>-->
+        <p align="justify">
+            Our benchmark provides a total of 12 tasks. These 12 tasks are divided into 3 subsets containing 4 tasks each. This division is based on the perceptual complexity of the underlying visual worlds. We refer to these 3 subsets as:
+            <ol>
+                <li><b>SVIB-dSprites:</b> The underlying scenes are 2-dimensional and visually simple.</li>
+                <li><b>SVIB-CLEVR:</b> The underlying scenes are 3-dimensional and visually simple.</li>
+                <li><b>SVIB-CLEVRTex:</b> The underlying scenes are 3-dimensional and with complex textures on the objects and in the background.</li>
+            </ol>
         </p>
 
-<div style="padding: 2em 0 2em 0;">
-        <ul>
-  <li><strong>Dataset Overview</strong></li>
-  <ul>
-    <li>Total of three <b>environments</b>: <em>SVIB-dSprites</em>, <em>SVIB-CLEVR</em>, <em>SVIB-CLEVRTex</em></li>
-    <li>Each environment has three splits with distinct <b>difficulty</b>: <em>Easy</em> (α=0.6), <em>Medium</em> (α=0.4), <em>Hard</em> (α=0.2)</li>
-  </ul>
-  <br>
+        <p align="justify">
+            Within each subset of the 3 aforementioned subsets, we provide 4 tasks based on 4 rules of increasing complexity:
+            <ol>
+                <li><b>Single Atomic (S-A).</b> The underlying rule only modifies one factor per object. The factor modification is a function of only one causal parent.</li>
+                <li><b>Multiple Atomic (M-A).</b> The underlying rule modifies multiple factors per object. The factor modification is a function of only one causal parent.</li>
+                <li><b>Single Non-Atomic (S-NA).</b> The underlying rule only modifies one factor per object. Each factor modification is a function of multiple causal parents.</li>
+                <li><b>Multiple Non-Atomic (M-NA).</b> The underlying rule modifies multiple factors per object. Each factor modification is a function of multiple causal parents.</li>
+            </ol>
+        </p>
 
-  <li><strong>Variety of Tasks</strong></li>
-  <ul>
-    <li>Four <b>types of tasks</b> per environment:</li>
-    <ol type="1">
-      <li><em>Single_Atomic</em></li>
-      <li><em>Multiple_Atomic</em></li>
-      <li><em>Single_Non-Atomic</em></li>
-      <li><em>Multiple_Non-Atomic</em></li>
-    </ol>
-  </ul>
-  <br>
+        <p align="justify">
+            Within each of these 12 tasks, we provide 3 training splits and 1 testing split as follows:
+            <ol>
+                <li><b>Easy Training Split.</b> This training split corresponds to a generous α value of 0.6. It contains 64000 episodes.</li>
+                <li><b>Medium Training Split.</b> This training split corresponds to an α value of 0.4. It contains 64000 episodes.</li>
+                <li><b>Hard Training Split.</b> This training split corresponds to an α value of 0.2. It contains 64000 episodes.</li>
+                <li><b>Testing Split.</b> The testing split is common across all training splits. It exposes combinations not shown in any of the training splits. It contains 8000 episodes.</li>
+            </ol>
+        </p>
 
-  <li><strong>Data Split Details</strong></li>
-  <ul>
-    <li><b>Training</b> splits:</li>
-    <ul>
-      <li>64,000 input and target images</li>
-    </ul>
-    <li><b>Test</b> splits:</li>
-    <ul>
-      <li>8,000 out-of-distribution input and target images</li>
-    </ul>
-    <li><b>Ground-truth scene descriptions</b> and <b>object masks</b> provided for both input and target images</li>
-  </ul>
-</ul>
-</div>
+        <p align="justify">
+            Each episode contains the following files:
+            <ol>
+                <li>Input image.</li>
+                <li>Target image.</li>
+                <li>Ground truth scene metadata for the input image.</li>
+                <li>Ground truth scene metadata for the target image.</li>
+                <li>Ground truth object masks for the input image.</li>
+                <li>Ground truth object masks for the target image.</li>
+            </ol>
+        </p>
 
+<!--<div style="padding: 2em 0 2em 0;">-->
+<!--        <ul>-->
+<!--  <li><strong>Dataset Overview</strong></li>-->
+<!--  <ul>-->
+<!--    <li>Total of three <b>environments</b>: <em>SVIB-dSprites</em>, <em>SVIB-CLEVR</em>, <em>SVIB-CLEVRTex</em></li>-->
+<!--    <li>Each environment has three splits with distinct <b>difficulty</b>: <em>Easy</em> (α=0.6), <em>Medium</em> (α=0.4), <em>Hard</em> (α=0.2)</li>-->
+<!--  </ul>-->
+<!--  <br>-->
+
+<!--  <li><strong>Variety of Tasks</strong></li>-->
+<!--  <ul>-->
+<!--    <li>Four <b>types of tasks</b> per environment:</li>-->
+<!--    <ol type="1">-->
+<!--      <li><em>Single_Atomic</em></li>-->
+<!--      <li><em>Multiple_Atomic</em></li>-->
+<!--      <li><em>Single_Non-Atomic</em></li>-->
+<!--      <li><em>Multiple_Non-Atomic</em></li>-->
+<!--    </ol>-->
+<!--  </ul>-->
+<!--  <br>-->
+
+<!--  <li><strong>Data Split Details</strong></li>-->
+<!--  <ul>-->
+<!--    <li><b>Training</b> splits:</li>-->
+<!--    <ul>-->
+<!--      <li>64,000 input and target images</li>-->
+<!--    </ul>-->
+<!--    <li><b>Test</b> splits:</li>-->
+<!--    <ul>-->
+<!--      <li>8,000 out-of-distribution input and target images</li>-->
+<!--    </ul>-->
+<!--    <li><b>Ground-truth scene descriptions</b> and <b>object masks</b> provided for both input and target images</li>-->
+<!--  </ul>-->
+<!--</ul>-->
+<!--</div>-->
+<br>
+        <br>
+<h2 align="center">Download Links</h2>
+        <hr>
         <ul class="sample">
-            <li class="h-li"><b><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a></b></li>
+            To download a preview of the benchmark, use the link: <li class="h-li"><b><a href="https://github.com/systematic-visual-imagination/benchmark">SVIB dataset preview/sample (356 MB)</a></b></li>
         </ul>
+        To download all the tasks for a specific visual complexity level and generalization difficulty, use the links below.
+        <br>
+        <br>
         <div style="display: flex; flex-direction: row; justify-content: space-around;">
             <!--------------------- dSprites --------------------->
             <div style="flex-grow: 1;">
@@ -336,10 +391,10 @@
         <div align="center" style="margin: 4em 0 1em 0;">
             <h4></h4>
         </div>
-        <p style="margin: 0 1.2em 0 1.2em;">
-            <b> Full Datasets</b> &nbsp;
+        <p style="margin: 0 1.2em 0 1.2em;" align="justify">
+<!--            <b>Complete Dataset Collection.</b> &nbsp;-->
 <!--Here, we provide all the datasets used in the paper, including the data corresponding to <b>&alpha;</b> value of 0.0. Each dataset is further divided into four data splits based on the coverage of primitive combinations. Except for the data corresponding to <b>&alpha;</b>=0.0 and the overall dataset structure, these datasets are inherently same to the main dataset we have been providing above.-->
-Here, we offer access to all the datasets utilized in our paper. This includes data associated with an α (alpha) value of 0.0. Each dataset is divided into four distinct data splits, categorized by the extent of primitive combination coverage. It's important to note that, aside from the data corresponding to α=0.0 and the overarching dataset structure, these datasets are essentially identical to the primary datasets presented above.
+To download all the splits of a specific task (out of the 12 tasks), use the following links. We provide the splits associated with all α values i.e., 0.0, 0.2 (Hard Split), 0.4 (Medium Split), and 0.6 (Easy Split). The following links point to the identical dataset as above but is packaged differently in a task-wise manner.
         </p>
         <div class="full_dataset">
             <ul class="v-ul">
@@ -367,8 +422,8 @@ Here, we offer access to all the datasets utilized in our paper. This includes d
         <div align="center" style="margin: 4em 0 1em 0;">
             <h4></h4>
         </div>
-        <p style="margin: 0 1.2em 0 1.2em;">
-            <b> Omni-Composition Datasets</b> &nbsp; Here, we also provides an omni-composition dataset for each of the 3 subsets: SVIB-dSprites, SVIB-CLEVR, and SVIB-CLEVRTex. An omni-composition dataset is a dataset containing unpaired images that capture all possible combinations of primitives under the visual vocabulary of its corresponding environment.
+        <p style="margin: 0 1.2em 0 1.2em;" align="justify">
+            <b> Omni-Composition Datasets</b> &nbsp; Here, we provide an omni-composition dataset for each of the 3 subsets: SVIB-dSprites, SVIB-CLEVR, and SVIB-CLEVRTex. An omni-composition dataset is a dataset containing unpaired images that capture all possible combinations of primitives under the visual vocabulary of its corresponding environment.
         </p>
         <div class="full_dataset">
             <ul class="v-ul">
