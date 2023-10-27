@@ -221,7 +221,7 @@
                     <img border="0" src="images/alpha.png" style="width: 100%" />
                 </p>
                 <p align="justify">
-                    The training set includes all the primitives of shape and color individually. However, it does not contain all possible combinations of the primitives, but contains only a subset of them. We provide several training splits by controlling an α parameter i.e., the fraction of all possible primitive combinations that are shown in the training episodes. In testing, we present the held-out combinations.
+                    This is an illustration of an example <b>compositional visual world</b> where an object's appearance can be described by its color and shape. In this example world, the training set would expose all the color and shape primitives individually. However, it would not contain all the 16 possible combinations. Rather, it would only expose a subset of them. Training splits of varying difficulty can be constructed by controlling an α parameter i.e., the fraction of all possible primitive combinations that are shown in the training episodes. In testing, we present the held-out combinations.
                 </p>
             </div>
         </div>
@@ -249,7 +249,7 @@
         <p align="justify">
             <b>Rules.</b> Within each subset of the 3 aforementioned subsets, we provide 4 tasks based on 4 rules of increasing complexity:
             <ol>
-                <li><b>Single Atomic (S-A).</b> The underlying rule only modifies one factor per object. The factor modification is a function of only one causal parent.</li>
+                <li><b>Single Atomic (S-A).</b> The underlying rule only modifies one factor per object. The factor modification is a function of only one causal parent. In SVIB, this corresponds to the <b>Shape-Swap</b> rule i.e., the input scene can be transformed to the target scene by swapping the shapes of the two objects while keeping the other factors e.g., color, size, etc., the same as that in the input scene.</li>
                 <li><b>Multiple Atomic (M-A).</b> The underlying rule modifies multiple factors per object. The factor modification is a function of only one causal parent.</li>
                 <li><b>Single Non-Atomic (S-NA).</b> The underlying rule only modifies one factor per object. Each factor modification is a function of multiple causal parents.</li>
                 <li><b>Multiple Non-Atomic (M-NA).</b> The underlying rule modifies multiple factors per object. Each factor modification is a function of multiple causal parents.</li>
