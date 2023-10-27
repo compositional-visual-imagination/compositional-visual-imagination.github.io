@@ -236,16 +236,18 @@
 <!--            There are a total of 12 tasks, 4 tasks per environment (<b>SVIB-dSprites</b>, <b>SVIB-CLEVR</b>, and <b>SVIB-CLEVRTex</b>). Here, we provide three datasets based on visual complexity, each consisting of three levels of difficulty: Easy, Medium, and Hard. These three levels depend on how much various kinds of primitive combinations are covered by the training set. The training and test sets are systematically separated perfectly, ensuring that the objects in the test set do not appear anywhere in the training set. Through this, it's not only possible to aim for (1) the training performance to be as close as possible to the test performance, but also (2) to achieve this even at higher levels of difficulty.-->
 <!--        </p>-->
         <p align="justify">
-            Our benchmark provides a total of 12 tasks. These 12 tasks are divided into 3 subsets containing 4 tasks each. This division is based on the perceptual complexity of the underlying visual worlds. We refer to these 3 subsets as:
+            Our benchmark provides a total of 12 tasks.<br><br>
+
+            <b>Subsets.</b> The 12 tasks are divided into 3 subsets containing 4 tasks each. This division is based on the perceptual complexity of the underlying visual worlds. We refer to these 3 subsets as:
             <ol>
                 <li><b>SVIB-dSprites:</b> The underlying scenes are 2-dimensional and visually simple.</li>
                 <li><b>SVIB-CLEVR:</b> The underlying scenes are 3-dimensional and visually simple.</li>
                 <li><b>SVIB-CLEVRTex:</b> The underlying scenes are 3-dimensional and with complex textures on the objects and in the background.</li>
             </ol>
         </p>
-
+<br>
         <p align="justify">
-            Within each subset of the 3 aforementioned subsets, we provide 4 tasks based on 4 rules of increasing complexity:
+            <b>Rules.</b> Within each subset of the 3 aforementioned subsets, we provide 4 tasks based on 4 rules of increasing complexity:
             <ol>
                 <li><b>Single Atomic (S-A).</b> The underlying rule only modifies one factor per object. The factor modification is a function of only one causal parent.</li>
                 <li><b>Multiple Atomic (M-A).</b> The underlying rule modifies multiple factors per object. The factor modification is a function of only one causal parent.</li>
@@ -253,9 +255,9 @@
                 <li><b>Multiple Non-Atomic (M-NA).</b> The underlying rule modifies multiple factors per object. Each factor modification is a function of multiple causal parents.</li>
             </ol>
         </p>
-
+<br>
         <p align="justify">
-            Within each of these 12 tasks, we provide 3 training splits and 1 testing split as follows:
+            <b>Splits.</b> Within each of these 12 tasks, we provide 3 training splits and 1 testing split as follows:
             <ol>
                 <li><b>Easy Training Split.</b> This training split corresponds to a generous α value of 0.6. It contains 64000 episodes.</li>
                 <li><b>Medium Training Split.</b> This training split corresponds to an α value of 0.4. It contains 64000 episodes.</li>
@@ -263,9 +265,9 @@
                 <li><b>Testing Split.</b> The testing split is common across all training splits. It exposes combinations not shown in any of the training splits. It contains 8000 episodes.</li>
             </ol>
         </p>
-
+<br>
         <p align="justify">
-            Each episode contains the following files:
+            <b>Contents of an Episode.</b> Each episode contains the following files:
             <ol>
                 <li>Input image.</li>
                 <li>Target image.</li>
